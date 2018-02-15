@@ -23,10 +23,20 @@ public class partitionProblem {
 	public static void main(String [] args) {
 		
 		//This is the set of n positive integers that is passed into the program
-		int [] integers = {2, 3, 4, 10, 7, 5, 8, 3};
+		int [] integers = {2, 3, 4, 10, 7, 5, 8, 3, 1};
 		
 		//Create variable to store number of integers
-		int n = integers.length;
+				int n = integers.length;
+		
+		//If the integers add to an odd number, we know there can't be an equal split
+		int sum = 0;
+		for (int i = 0; i < n; i++) {
+			sum += integers[i];
+		}
+		if ((sum % 2) == 1) {
+			System.out.println("There are no possible combinations of subsets of these integers (odd sum of integers), why have you forsaken me?");
+			System.exit(0);
+		}
 		
 		//Array to store the binary number
 		int [] binaryArray = new int [n];
