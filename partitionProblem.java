@@ -21,11 +21,13 @@ public class partitionProblem {
 	*/
 	
 	public static void main(String [] args) {
-		//int [] integers = {2, 3, 4, 10, 7, 5, 8, 3};
-		int [] integers = {5, 2};
+		
+		//This is the set of n positive integers that is passed into the program
+		int [] integers = {2, 3, 4, 10, 7, 5, 8, 3};
 		
 		//Create variable to store number of integers
-		int n = 2;
+		int n = integers.length;
+		
 		//Array to store the binary number
 		int [] binaryArray = new int [n];
 		
@@ -42,21 +44,15 @@ public class partitionProblem {
 	
 		//Iterate through the binary numbers from 1 to n
 		for (int decimalCounter = 1; decimalCounter < max; decimalCounter++) {
+			
 			//Convert our decimal number to a binary string
 			String binaryString = Integer.toBinaryString(decimalCounter);
-			System.out.println(binaryString);
+			
 			//Convert our binary string to a binary array
 			for (int i = 0; i < binaryString.length(); i++) {
 				int j = n - 1;
 				binaryArray[j + (i - binaryString.length()) + 1] = Character.getNumericValue(binaryString.charAt(i));
 			}
-			
-			//print out our current binary number
-			for (int l = 0; l < binaryArray.length; l++) {
-				System.out.print(binaryArray[l]);
-			}
-			
-			System.out.println(" t");
 			
 			int sumA = 0;
 			int sumB = 0;
@@ -85,14 +81,12 @@ public class partitionProblem {
 					}
 				}
 				
-				
 				System.exit(0);
 			}
 		}
 		
 		System.out.println("There are no possible combinations of subsets of these integers, why have you forsaken me?");
 		System.exit(0);
-		
 	}
 	
 }
