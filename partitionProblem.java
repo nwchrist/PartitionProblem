@@ -21,10 +21,11 @@ public class partitionProblem {
 	*/
 	
 	public static void main(String [] args) {
-		int [] integers = {2, 3, 4, 10, 7, 5, 8, 3};
+		//int [] integers = {2, 3, 4, 10, 7, 5, 8, 3};
+		int [] integers = {5, 2};
 		
 		//Create variable to store number of integers
-		int n = 8;
+		int n = 2;
 		//Array to store the binary number
 		int [] binaryArray = new int [n];
 		
@@ -32,9 +33,15 @@ public class partitionProblem {
 		for (int i = 0; i < n; i++) {
 			binaryArray[i] = 0;
 		}
+		
+		int max = 2;
+		//quickly calculate 2^n
+		for (int i = 0; i < n - 1; i++) {
+			max = max * 2;
+		}
 	
 		//Iterate through the binary numbers from 1 to n
-		for (int decimalCounter = 1; decimalCounter <= n*n; decimalCounter++) {
+		for (int decimalCounter = 1; decimalCounter < max; decimalCounter++) {
 			//Convert our decimal number to a binary string
 			String binaryString = Integer.toBinaryString(decimalCounter);
 			System.out.println(binaryString);
