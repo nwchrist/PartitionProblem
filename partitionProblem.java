@@ -95,7 +95,7 @@ public class partitionProblem {
 			}
 		}
 		
-		System.out.println("There are no possible combinations of subsets of these integers, why have you forsaken me?");
+		System.out.println("There are no possible combinations of subsets of these integers");
 		System.exit(0);
 	}
 	
